@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CineVault — Catálogo</title>
+<link rel="stylesheet"  th:href="@{/css/styles.css}">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="wrap navbar-inner">
+      <a href="/app" class="logo">
+        <span class="logo-icon">▶</span>
+        Cine<span class="brand-vault">Vault</span>
+      </a>
+      <div class="nav-links">
+        <a href="/app" class="nav-link active">Inicio</a>
+        <a href="/exclusivos" class="nav-link">Exclusivos</a>
+        <a href="/descarga" class="nav-link">Descargas</a>
+      </div>
+      <div class="nav-actions">
+        <form  class="nav-search" id="navSearchForm">
+            <input type="text" name="q" id="navSearchInput" class="nav-search-input"
+                   placeholder="Buscar películas..." autocomplete="off"/>
+            <button type="button" class="icon-search-btn" id="navSearchToggle" aria-label="Buscar">
+                &#128269;
+            </button>
+        </form>
+        <a href="/perfil" class="avatar-badge">1</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="wrap">
+
+    <!-- CATEGORY FILTERS -->
+    <div class="category-pills" id="categoryPills">
+      <button class="category-pill active" data-cat="destacadas">Destacadas</button>
+      <button class="category-pill" data-cat="nuevos-estrenos">Nuevos estrenos</button>
+      <button class="category-pill" data-cat="mas-populares">Más populares</button>
+      <button class="category-pill" data-cat="accion">Acción</button>
+      <button class="category-pill" data-cat="comedia">Comedia</button>
+      <button class="category-pill" data-cat="terror">Terror</button>
+      <button class="category-pill" data-cat="ciencia-ficcion">Ciencia ficción</button>
+      <button class="category-pill" data-cat="drama">Drama</button>
+      <button class="category-pill" data-cat="animacion">Animación</button>
+    </div>
+
+    <!-- SECTION HEADING (oculto para "Destacadas") -->
+    <div class="explore-head" id="catalogHead" style="display:none;">
+      <div class="section-title" id="catalogTitle">Nuevos estrenos</div>
+      <span class="see-all" id="catalogCount">0 títulos</span>
+    </div>
+
+    <!-- CATALOG GRID -->
+    <section class="catalog-section">
+      <div class="movie-grid" id="catalogGrid">
+
+        <a href="/watch" class="movie-card" data-cats="destacadas mas-populares accion">
+          <div class="poster">
+            <span class="new-badge">Nuevo</span>
+            <span class="rating-badge">★ 8.4</span>
+          </div>
+          <div class="movie-title">Último Eclipse</div>
+          <div class="movie-sub">2024 · 2h 08m</div>
+          <div class="genre-tags"><span class="genre-tag">Acción</span><span class="genre-tag">Thriller</span></div>
+        </a>
+
+        <a href="/watch" class="movie-card" data-cats="destacadas nuevos-estrenos terror">
+          <div class="poster">
+            <span class="new-badge">Nuevo</span>
+            <span class="rating-badge">★ 7.8</span>
+          </div>
+          <div class="movie-title">La Sombra del Abismo</div>
+          <div class="movie-sub">2024 · 1h 47m</div>
+          <div class="genre-tags"><span class="genre-tag">Terror</span><span class="genre-tag">Suspenso</span></div>
+        </a>
+
+        <a href="/watch" class="movie-card" data-cats="destacadas mas-populares drama">
+          <div class="poster">
+            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=60" alt="El Jardín del Tiempo">
+            <span class="rating-badge">★ 8.0</span>
+          </div>
+          <div class="movie-title">El Jardín del Tiempo</div>
+          <div class="movie-sub">2023 · 1h 58m</div>
+          <div class="genre-tags"><span class="genre-tag">Drama</span><span class="genre-tag">Romance</span></div>
+        </a>
+
+        <a href="/watch" class="movie-card" data-cats="destacadas nuevos-estrenos mas-populares accion">
+          <div class="poster">
+            <span class="new-badge">Nuevo</span>
+            <span class="rating-badge">★ 7.5</span>
+          </div>
+          <div class="movie-title">Código Rojo</div>
+          <div class="movie-sub">2024 · 1h 52m</div>
+          <div class="genre-tags"><span class="genre-tag">Acción</span><span class="genre-tag">Thriller</span></div>
+        </a>
+
+        <a href="/watch" class="movie-card" data-cats="nuevos-estrenos terror ciencia-ficcion" style="display:none;">
+          <div class="poster">
+            <span class="new-badge">Nuevo</span>
+            <span class="rating-badge">★ 8.1</span>
+          </div>
+          <div class="movie-title">Terror en el Vacío</div>
+          <div class="movie-sub">2025 · 1h 55m</div>
+          <div class="genre-tags"><span class="genre-tag">Terror</span><span class="genre-tag">Ciencia Ficción</span></div>
+        </a>
+
+        <a href="/watch" class="movie-card" data-cats="terror mas-populares" style="display:none;">
+          <div class="poster">
+            <span class="rating-badge">★ 7.9</span>
+          </div>
+          <div class="movie-title">Sombras de Medianoche</div>
+          <div class="movie-sub">2023 · 1h 51m</div>
+          <div class="genre-tags"><span class="genre-tag">Terror</span><span class="genre-tag">Misterio</span></div>
+        </a>
+
+        <a href="/watch" class="movie-card" data-cats="mas-populares comedia" style="display:none;">
+          <div class="poster">
+            <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=400&q=60" alt="Risas en el Caos">
+            <span class="rating-badge">★ 7.2</span>
+          </div>
+          <div class="movie-title">Risas en el Caos</div>
+          <div class="movie-sub">2024 · 1h 38m</div>
+          <div class="genre-tags"><span class="genre-tag">Comedia</span></div>
+        </a>
+
+        <a href="/watch" class="movie-card" data-cats="mas-populares animacion" style="display:none;">
+          <div class="poster">
+            <span class="rating-badge">★ 8.3</span>
+          </div>
+          <div class="movie-title">Animalia</div>
+          <div class="movie-sub">2023 · 1h 42m</div>
+          <div class="genre-tags"><span class="genre-tag">Animación</span><span class="genre-tag">Aventura</span></div>
+        </a>
+
+        <a href="/watch" class="movie-card" data-cats="mas-populares drama" style="display:none;">
+          <div class="poster">
+            <span class="rating-badge">★ 8.6</span>
+          </div>
+          <div class="movie-title">La Gran Apuesta</div>
+          <div class="movie-sub">2023 · 2h 02m</div>
+          <div class="genre-tags"><span class="genre-tag">Drama</span><span class="genre-tag">Crimen</span></div>
+        </a>
+
+        <a href="/watch" class="movie-card" data-cats="mas-populares drama" style="display:none;">
+          <div class="poster">
+            <span class="rating-badge">★ 7.6</span>
+          </div>
+          <div class="movie-title">Amor en Tokyo</div>
+          <div class="movie-sub">2023 · 1h 44m</div>
+          <div class="genre-tags"><span class="genre-tag">Romance</span><span class="genre-tag">Drama</span></div>
+        </a>
+
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="wrap footer-row">
+      <div class="logo">
+        <span class="logo-icon">▶</span>
+        Cine<span class="brand-vault">Vault</span>
+      </div>
+      <div class="copyright">© 2025 CineVault — Distribución y Transmisión Cinematográfica S.A.C.</div>
+    </div>
+  </footer>
+
+  <script>
+    const pills = document.querySelectorAll('.category-pill');
+    const cards = document.querySelectorAll('#catalogGrid .movie-card');
+    const catalogHead = document.getElementById('catalogHead');
+    const catalogTitle = document.getElementById('catalogTitle');
+    const catalogCount = document.getElementById('catalogCount');
+
+    pills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        pills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+
+        const cat = pill.dataset.cat;
+        let visibleCount = 0;
+
+        cards.forEach(card => {
+          const cats = card.dataset.cats.split(' ');
+          const show = cats.includes(cat);
+          card.style.display = show ? '' : 'none';
+          if (show) visibleCount++;
+        });
+
+        if (cat === 'destacadas') {
+          catalogHead.style.display = 'none';
+        } else {
+          catalogHead.style.display = 'flex';
+          catalogTitle.textContent = pill.textContent.trim();
+          catalogCount.textContent = visibleCount + ' títulos';
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
