@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CineVault — Catálogo</title>
-<link rel="stylesheet"  th:href="@{/css/styles.css}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CineVault — Catálogo</title>
+  <link rel="stylesheet" th:href="@{/css/styles.css}">
 </head>
+
 <body>
 
   <!-- NAVBAR -->
@@ -21,12 +23,12 @@
         <a href="/descarga" class="nav-link">Descargas</a>
       </div>
       <div class="nav-actions">
-        <form  class="nav-search" id="navSearchForm">
-            <input type="text" name="q" id="navSearchInput" class="nav-search-input"
-                   placeholder="Buscar películas..." autocomplete="off"/>
-            <button type="button" class="icon-search-btn" id="navSearchToggle" aria-label="Buscar">
-                &#128269;
-            </button>
+        <form class="nav-search" id="navSearchForm">
+          <input type="text" name="q" id="navSearchInput" class="nav-search-input" placeholder="Buscar películas..."
+            autocomplete="off" />
+          <button type="button" class="icon-search-btn" id="navSearchToggle" aria-label="Buscar">
+            &#128269;
+          </button>
         </form>
         <a href="/perfil" class="avatar-badge">1</a>
       </div>
@@ -80,12 +82,14 @@
 
         <a href="/watch" class="movie-card" data-cats="destacadas mas-populares drama">
           <div class="poster">
-            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=60" alt="El Jardín del Tiempo">
+            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=60"
+              alt="El Jardín del Tiempo">
             <span class="rating-badge">★ 8.0</span>
           </div>
           <div class="movie-title">El Jardín del Tiempo</div>
           <div class="movie-sub">2023 · 1h 58m</div>
           <div class="genre-tags"><span class="genre-tag">Drama</span><span class="genre-tag">Romance</span></div>
+          <button type="button" class="watch-button">Ver película</button>
         </a>
 
         <a href="/watch" class="movie-card" data-cats="destacadas nuevos-estrenos mas-populares accion">
@@ -105,7 +109,8 @@
           </div>
           <div class="movie-title">Terror en el Vacío</div>
           <div class="movie-sub">2025 · 1h 55m</div>
-          <div class="genre-tags"><span class="genre-tag">Terror</span><span class="genre-tag">Ciencia Ficción</span></div>
+          <div class="genre-tags"><span class="genre-tag">Terror</span><span class="genre-tag">Ciencia Ficción</span>
+          </div>
         </a>
 
         <a href="/watch" class="movie-card" data-cats="terror mas-populares" style="display:none;">
@@ -202,4 +207,5 @@
   </script>
 
 </body>
+
 </html>
